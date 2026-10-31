@@ -1,0 +1,37 @@
+# Colcon / ROS 2 workspace overlay
+build/
+install/
+log/
+COLCON_IGNORE
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# ROS / Gazebo runtime
+*.bag
+*.bag.active
+*.bag.index
+.ros/
+
+# Trained weights and large datasets (keep docs; do not commit binaries)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.bin
+weights/
+datasets/raw/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
