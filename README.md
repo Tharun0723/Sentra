@@ -20,8 +20,8 @@ This repository currently contains **project documentation and an empty ROS 2 wo
 | Item | Status (31 Oct 2026) |
 |---|---|
 | Project documentation | Initial versions created |
-| ROS 2 packages in `src/` | None |
-| Robot URDF / Xacro | Not started |
+| ROS 2 packages in `src/` | `sentra_description` (RViz display only) |
+| Robot URDF / Xacro | Industrial differential-drive model in RViz |
 | Gazebo factory world | Not started |
 | Mapping, Nav2, vision, mission | Not started |
 | Git history | Repository exists, no commits yet |
@@ -71,7 +71,15 @@ Do not treat this list as a claim that the robot already does these things.
 
 ## Installation and execution
 
-Nothing in this repository needs to be built yet (`src/` is empty).
+Build the description package, then display it in RViz (this does **not** start Gazebo):
+
+```bash
+cd ~/sentra_ws
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select sentra_description
+source install/setup.bash
+ros2 launch sentra_description display.launch.py
+```
 
 On this development machine, ROS 2 Jazzy, Gazebo Harmonic, Nav2, SLAM Toolbox, `ros_gz`, RViz2, and teleop packages are already installed. PyTorch and YOLO tooling are **not**. GUI rendering currently uses software Mesa (`llvmpipe`), not a dedicated GPU.
 

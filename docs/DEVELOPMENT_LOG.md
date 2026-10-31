@@ -84,3 +84,28 @@ Entries must not claim implementation that did not happen.
 1. **Commit by phase, not by file-save.** A phase is a tested slice (for example: docs baseline, robot in RViz, robot in Gazebo). Incomplete experiments stay local until they work or are explicitly abandoned.
 2. **Never commit** `build/`, `install/`, `log/`, rosbag files, or `.pt` weights. Maps as YAML+PGM can be committed when they are project assets.
 3. **GitHub remote name** remains `sentra` when the repository is created.
+
+---
+
+## 2026-10-31 — GUI smoke test passed; `sentra_description` created
+
+### Work completed
+
+- Student confirmed empty Gazebo Harmonic (`gz sim -r empty.sdf`) and RViz2 both opened on WSL2.
+- Created ROS 2 package `sentra_description` (ament_cmake).
+- Wrote industrial-looking Xacro: yellow chassis, bumper, mast, LiDAR, camera, IMU, two drive wheels, four casters.
+- Launch: `display.launch.py` (robot_state_publisher + joint_state_publisher_gui + RViz).
+- `colcon build --packages-select sentra_description` succeeded.
+- `xacro` + `check_urdf` succeeded (`base_link` root, 8 children). RViz appearance is **not** student-verified yet.
+
+### Engineering decisions
+
+1. **RViz before Gazebo.** If the TF tree is wrong, Gazebo plugins hide the mistake.
+2. **Geometry primitives, not CAD.** Industrial look from stacked boxes/cylinders/spheres and safety-yellow/charcoal materials. Meshes can come later.
+3. **Multiple visuals on `base_link`.** Keeps TF small; wheels and sensors stay separate links because they move or must have frames.
+4. **No Gazebo tags in this slice.** Avoid mixing “see the robot” with “simulate the robot.”
+
+### Lessons learned
+
+- `$(find sentra_description)` in Xacro only works after the package is on `AMENT_PREFIX_PATH` (source `install/setup.bash`).
+- `ParameterValue(..., value_type=str)` is required on Jazzy so `robot_description` is not parsed as YAML.

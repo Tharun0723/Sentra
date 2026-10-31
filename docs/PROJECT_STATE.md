@@ -1,8 +1,8 @@
 # SENTRA project state
 
 **Date of this snapshot:** 31 October 2026  
-**Current milestone:** Milestone 1 — Robot Foundation (**not started**)  
-**Implementation status:** Documentation only. No ROS 2 packages, no robot model, no simulation world.
+**Current milestone:** Milestone 1 — Robot Foundation (**in progress**)  
+**Implementation status:** GUI stack verified. First package `sentra_description` builds. Robot is **not** in Gazebo yet.
 
 This file records **verified** facts. If something was not checked, it is marked unknown.
 
@@ -23,7 +23,7 @@ sentra_ws/
   src/                 (empty — no package.xml files)
 ```
 
-There is **no** `build/`, `install/`, or `log/` directory. `colcon` has never built this workspace.
+Colcon overlay exists after building `sentra_description` (`build/`, `install/`, `log/` are gitignored).
 
 Git: local repository on branch `main`. `.gitignore` excludes colcon artifacts, bags, and model weights.
 
@@ -85,22 +85,22 @@ Also present: `nav2_minimal_tb3_sim`, `nav2_minimal_tb4_description`, `nav2_mini
 
 | Item | Status |
 |---|---|
-| Custom packages | None |
-| Topics / services / actions owned by SENTRA | None |
-| Launch files | None |
+| Custom packages | `sentra_description` |
+| Topics / services / actions owned by SENTRA | After `display.launch.py`: `/robot_description` (`std_msgs/msg/String` wrapping URDF), `/tf`, `/tf_static`, `/joint_states` |
+| Launch files | `sentra_description/launch/display.launch.py` |
 | Maps | None |
 | Datasets / models | None |
 | Inspection reports | None |
 
-A ROS 2 workspace overlay is **not** initialized in the colcon sense: `src/` exists but contains no packages, and the workspace has never been built.
+Workspace overlay: `colcon build --packages-select sentra_description` succeeded. `check_urdf` parsed the processed Xacro (`root Link: base_link`). **Student still needs to confirm the model in RViz.**
 
 ## 5. Known errors
 
 None from SENTRA software, because none exists.
 
-Environment risks (not yet reproduced as failures):
+Environment risks:
 
-- Software rendering may make Gazebo Harmonic heavy on WSL2.
+- Software rendering may make Gazebo Harmonic heavy on WSL2. Empty Gazebo + empty RViz **did** open (student confirmed 2026-10-31).
 - GPU-backed YOLO training is not available on this WSL instance until GPU access is fixed **or** CPU training is explicitly accepted (slow).
 
 ## 6. Completed tasks
@@ -109,23 +109,20 @@ Environment risks (not yet reproduced as failures):
 - Read existing documentation files (they were empty placeholders).
 - Verified ROS 2 Jazzy, Gazebo Harmonic, Nav2, SLAM Toolbox, `ros_gz`, RViz2, teleop, and related packages with `dpkg` / `ros2 pkg list` / version commands.
 - Wrote initial Markdown documentation (`README.md`, `docs/*`, `design/SYSTEM_ARCHITECTURE.md`).
+- First Git commit pushed to https://github.com/Tharun0723/Sentra
+- Student confirmed empty Gazebo Harmonic and RViz2 windows open on WSL2.
+- Created and built `sentra_description` (industrial differential-drive Xacro, RViz display launch).
 
 ## 7. Pending tasks
 
-- Student review of remaining architecture details (package list, GUI smoke test).
-- GUI smoke test: empty Gazebo Harmonic world + RViz2 (no custom packages).
-- Create GitHub remote when the student is ready (recommended name: `sentra`).
-- Only after architecture approval: first ROS 2 package for robot description.
+- Student confirms SENTRA model appears in RViz (`display.launch.py`).
+- Add Gazebo Harmonic spawn + `ros_gz` sensor bridges (next slice after RViz looks right).
+- Custom factory world (after the robot can spawn).
+- Keyboard teleop (after Gazebo drive plugin).
 
 ## 8. Next recommended task
 
-**Do not create packages yet.** First confirm that the GUI simulation stack actually opens on this WSL2 machine:
-
-1. Launch an empty Gazebo Harmonic world.
-2. Launch RViz2.
-3. Confirm both windows appear and remain stable for a short time.
-
-Exact commands will be given when that task is started. No extra apt packages are required for that test.
+Launch `sentra_description` display and confirm the yellow industrial chassis, mast, LiDAR, and camera in RViz. Use the joint GUI to rotate the drive wheels.
 
 ## 9. Design decisions already made
 
