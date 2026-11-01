@@ -1,122 +1,243 @@
 # SENTRA
+### Autonomous Industrial Inspection Robot
 
-**SENTRA – Autonomous Industrial Inspection Robot**
+**Perceive. Navigate. Inspect.**
 
-*Perceive. Navigate. Inspect.*
+SENTRA is a simulation-based autonomous mobile robotics project focused on intelligent industrial inspection. The goal is to develop a customized mobile robot capable of autonomously patrolling a large, purpose-built industrial factory environment, navigating inspection checkpoints, identifying visual anomalies using AI-powered computer vision, generating inspection reports, and recovering from operational failures.
 
-SENTRA is a **simulation-based** robotics engineering project. The long-term goal is an autonomous mobile robot that patrols a simulated industrial factory, navigates between inspection checkpoints, inspects the scene with a camera, records findings, and recovers from a defined set of navigation and perception failures.
+Built using **ROS 2 Jazzy, Gazebo Harmonic, Nav2, SLAM Toolbox, OpenCV, YOLO and BehaviorTree.CPP**, SENTRA aims to demonstrate an integrated autonomous robotics system through simulation.
 
-This repository currently contains **project documentation and an empty ROS 2 workspace**. No robot description, simulation world, navigation configuration, or inspection software has been implemented yet.
+> This is an actively developed engineering project. Features described below are development objectives unless explicitly marked as implemented.
 
-## Objectives
+---
 
-- Build a complete autonomous inspection stack in **ROS 2 Jazzy** and **Gazebo Harmonic**.
-- Demonstrate mapping, localization, Nav2 navigation, computer vision, and behavior-tree mission control.
-- Treat the work as a learning project: every subsystem should be understood, tested, and documented before the next one is added.
-- Keep the stack **free and local**. Avoid paid APIs, subscriptions, and commercial dependencies.
+## Project Vision
 
-## Current status
+Industrial facilities require regular monitoring to identify unsafe conditions, misplaced objects and potential operational hazards.
 
-| Item | Status (31 Oct 2026) |
+SENTRA explores how autonomous mobile robots can assist with these inspections through a combination of:
+
+- Autonomous mobile robotics.
+- Environmental mapping and localization.
+- Intelligent navigation and path planning.
+- AI-powered visual perception.
+- Autonomous mission planning.
+- Failure detection and recovery.
+
+The long-term objective is to build a complete, modular and testable autonomous inspection platform.
+
+## Key Objectives
+
+- Design a customized industrial mobile robot using URDF and Xacro.
+- Develop a detailed, large-scale factory environment in Gazebo Harmonic.
+- Integrate LiDAR, IMU, RGB camera and odometry.
+- Implement autonomous mapping using SLAM Toolbox.
+- Implement localization and autonomous navigation using Nav2.
+- Develop an AI-powered visual inspection pipeline using OpenCV and YOLO.
+- Detect selected industrial anomalies and generate inspection reports.
+- Coordinate inspection missions using BehaviorTree.CPP.
+- Implement intelligent recovery strategies for navigation and perception failures.
+- Evaluate system reliability through at least 30 simulation runs.
+
+## Planned System Capabilities
+
+| Subsystem | Planned functionality |
 |---|---|
-| Project documentation | Initial versions created |
-| ROS 2 packages in `src/` | `sentra_description` (RViz display only) |
-| Robot URDF / Xacro | Industrial differential-drive model in RViz |
-| Gazebo factory world | Not started |
-| Mapping, Nav2, vision, mission | Not started |
-| Git history | Repository exists, no commits yet |
+| Robot design | Custom industrial mobile robot |
+| Simulation | Large custom industrial factory |
+| Perception | LiDAR, IMU, camera and odometry |
+| Mapping | 2D SLAM using SLAM Toolbox |
+| Localization | AMCL and TF2 |
+| Navigation | Nav2 and waypoint navigation |
+| Computer vision | OpenCV and YOLO |
+| AI resources | Hugging Face models and datasets where suitable |
+| Mission control | BehaviorTree.CPP |
+| Recovery | Navigation and perception recovery |
+| Reporting | Structured inspection reports |
+| Evaluation | Mission success, detection performance and failure analysis |
 
-See [docs/PROJECT_STATE.md](docs/PROJECT_STATE.md) for the evidence-based environment report.
+## Inspection Scenarios
 
-## Technology stack
+The initial inspection scenarios will explore:
 
-| Role | Choice |
+1. Liquid spills and floor hazards.
+2. Missing or incorrectly placed safety equipment.
+3. Misplaced industrial objects.
+
+The detection categories, datasets and models will be selected and evaluated during development.
+
+## Technology Stack
+
+| Category | Technology |
 |---|---|
-| Host OS | Windows 11 |
-| Linux | Ubuntu 24.04 on WSL2 |
-| Middleware | ROS 2 Jazzy |
-| Simulator | Gazebo Harmonic (`gz sim` 8.x) via `ros_gz` |
+| Operating system | Ubuntu 24.04 |
+| Development environment | Windows 11 + WSL2 |
+| Robotics middleware | ROS 2 Jazzy |
+| Simulation | Gazebo Harmonic |
+| Simulation integration | ros_gz |
+| Robot description | URDF / Xacro |
 | Visualization | RViz2 |
 | Mapping | SLAM Toolbox |
-| Localization | AMCL (Nav2) |
+| Localization | AMCL |
 | Navigation | Nav2 |
-| Decision-making | BehaviorTree.CPP |
-| Languages | C++ and Python |
-| Vision | OpenCV; YOLO via PyTorch (not installed yet) |
+| Behavior trees | BehaviorTree.CPP |
+| Computer vision | OpenCV |
+| Deep learning | PyTorch |
+| Object detection | YOLO |
+| AI model resources | Hugging Face |
+| Programming | C++ and Python |
 | Version control | Git and GitHub |
+| IDE | Cursor |
 
-## Architecture overview
+The project prioritizes free and open-source software and local execution wherever practical.
 
-SENTRA is planned as a small set of ROS 2 packages, not one large application.
+## System Architecture
 
-1. **Robot description and simulation** — model, sensors, factory world, Gazebo bridges.
-2. **Mapping and localization** — SLAM Toolbox, saved map, AMCL, TF2.
-3. **Autonomous navigation** — Nav2 path planning, control, waypoints.
-4. **Computer vision** — camera images, OpenCV, trained detector, inspection results.
-5. **Mission management** — behavior tree, reporting, recovery, evaluation.
+The intended system is organized into modular subsystems:
 
-Package names are **proposals only**. They will not be created until they are approved and needed. Details: [design/SYSTEM_ARCHITECTURE.md](design/SYSTEM_ARCHITECTURE.md).
+1. Robot Description and Simulation
+2. Sensor Integration and Processing
+3. Mapping and Localization
+4. Autonomous Navigation
+5. AI-based Visual Inspection
+6. Inspection Mission Management
+7. Behavior Tree and Recovery
+8. Inspection Reporting and Evaluation
 
-## Features (target, not implemented)
+Each subsystem will be developed and tested incrementally before integration.
 
-- Differential-drive mobile robot in Gazebo with LiDAR, IMU, RGB camera, and odometry.
-- Manual keyboard teleoperation.
-- 2D mapping of a factory environment, then localization on the saved map.
-- Waypoint navigation to inspection checkpoints and return to base.
-- Visual inspection of a defined set of object/scene categories after a dataset is collected and a model is trained.
-- Behavior-tree mission with bounded retries, timeouts, and a human-intervention fallback.
-- Inspection reports written to disk for later evaluation.
+## Development Roadmap
 
-Do not treat this list as a claim that the robot already does these things.
+### Milestone 1 — Robot Foundation
+- Custom robot design.
+- URDF/Xacro modelling.
+- RViz visualization.
+- Gazebo integration.
+- Sensor integration.
+- Keyboard teleoperation.
 
-## Installation and execution
+### Milestone 2 — Mapping and Navigation
+- Factory environment development.
+- SLAM mapping.
+- Map saving and loading.
+- Localization.
+- Nav2 configuration.
+- Autonomous checkpoint navigation.
 
-Build the description package, then display it in RViz (this does **not** start Gazebo):
+### Milestone 3 — AI Computer Vision
+- Camera integration.
+- OpenCV image processing.
+- Dataset preparation.
+- YOLO model selection or training.
+- Anomaly detection.
+- ROS 2 detection pipeline.
 
-```bash
-cd ~/sentra_ws
-source /opt/ros/jazzy/setup.bash
-colcon build --packages-select sentra_description
-source install/setup.bash
-ros2 launch sentra_description display.launch.py
+### Milestone 4 — Autonomous Inspection
+- BehaviorTree.CPP integration.
+- Inspection checkpoint management.
+- Navigation and perception integration.
+- Inspection reporting.
+- Failure detection and recovery.
+
+### Milestone 5 — Testing and Evaluation
+- At least 30 inspection runs.
+- Navigation performance evaluation.
+- Detection performance evaluation.
+- Failure analysis.
+- Reliability improvements.
+- Documentation and demonstration video.
+
+## Current Development Status
+
+**Current milestone: Milestone 1 — Robot Foundation**
+
+| Component | Current status |
+|---|---|
+| ROS 2 Jazzy environment | Installed |
+| Gazebo Harmonic | Installed |
+| RViz2 | Installed |
+| SENTRA ROS 2 workspace | Created |
+| `sentra_description` package | Created and builds |
+| Robot Xacro description | Created; RViz verification pending |
+| Gazebo robot spawning | Pending |
+| Custom factory world | Pending |
+| SLAM and Nav2 | Pending integration |
+| AI vision pipeline | Pending |
+| Behavior tree mission | Pending |
+
+Progress will be updated as each component is implemented and tested.
+
+## Repository Structure
+
+```text
+sentra_ws/
+├── src/
+│   └── sentra_description/
+├── docs/
+│   ├── PROJECT_OVERVIEW.md
+│   ├── PROJECT_STATE.md
+│   └── DEVELOPMENT_LOG.md
+├── design/
+│   └── SYSTEM_ARCHITECTURE.md
+├── evaluation/
+├── media/
+├── scripts/
+└── README.md
 ```
 
-On this development machine, ROS 2 Jazzy, Gazebo Harmonic, Nav2, SLAM Toolbox, `ros_gz`, RViz2, and teleop packages are already installed. PyTorch and YOLO tooling are **not**. GUI rendering currently uses software Mesa (`llvmpipe`), not a dedicated GPU.
+Additional ROS 2 packages will be introduced as the architecture develops.
 
-Full environment details and commands used to verify them are in [docs/PROJECT_STATE.md](docs/PROJECT_STATE.md).
+## Development Environment
 
-Reproduction notes for a new Ubuntu 24.04 / ROS 2 Jazzy machine will be written when the first packages exist and have been built successfully.
+The project is developed using:
 
-## Demonstration
+- Windows 11.
+- WSL2.
+- Ubuntu 24.04.
+- ROS 2 Jazzy.
+- Gazebo Harmonic.
 
-No demonstration video or recorded mission exists yet.
+Workspace:
 
-## Results and limitations
+```bash
+~/sentra_ws
+```
 
-No inspection runs have been performed. There are no navigation, detection, or timing results.
+Detailed installation, build and execution instructions will be maintained as the project progresses.
 
-Known environment constraints:
+## Evaluation Goals
 
-- WSL2 GUI works, but Gazebo/RViz are currently **CPU-rendered**. Simulation will be slower than on a machine with working GPU passthrough.
-- YOLO training and inference are not available until a free local PyTorch setup is chosen and installed.
-- `twist_mux` and `laser_filters` are not installed. They are optional and will only be added if a clear need appears.
+The final system will be evaluated using:
 
-## Documentation map
+- Mission completion rate.
+- Navigation success rate.
+- Localization reliability.
+- Detection precision, recall and related metrics.
+- Inspection completion time.
+- Failure recovery success rate.
 
-| File | Purpose |
-|---|---|
-| [docs/PROJECT_OVERVIEW.md](docs/PROJECT_OVERVIEW.md) | Requirements, milestones, learning goals |
-| [docs/PROJECT_STATE.md](docs/PROJECT_STATE.md) | What exists today, verified against the machine |
-| [docs/DEVELOPMENT_LOG.md](docs/DEVELOPMENT_LOG.md) | Decisions, problems, lessons |
-| [design/SYSTEM_ARCHITECTURE.md](design/SYSTEM_ARCHITECTURE.md) | Proposed subsystems and ROS 2 interfaces |
+Results will be documented using reproducible simulation experiments.
 
-## Version control
+## Project Documentation
 
-Work happens on `main` in this workspace. **After each completed phase** (a milestone slice that was tested, not every keystroke):
+- `docs/PROJECT_OVERVIEW.md` — Project requirements and objectives.
+- `docs/PROJECT_STATE.md` — Verified implementation status.
+- `docs/DEVELOPMENT_LOG.md` — Development history and engineering decisions.
+- `design/SYSTEM_ARCHITECTURE.md` — System architecture and interfaces.
 
-1. Update `docs/PROJECT_STATE.md` and `docs/DEVELOPMENT_LOG.md`.
-2. Commit with a message that says *why* the change exists.
-3. Push to GitHub so the remote matches the local project.
+## Learning and Engineering Philosophy
+
+SENTRA is being developed as a hands-on robotics engineering project.
+
+The emphasis is on understanding robotics fundamentals, designing modular systems, implementing algorithms, debugging real integration problems and evaluating performance rather than simply assembling existing code.
+
+## License
+
+To be decided.
+
+---
+
+**SENTRA — Perceive. Navigate. Inspect.**
 
 Do not commit `build/`, `install/`, `log/`, bag files, or neural-network weights. Those are listed in `.gitignore`.
 
