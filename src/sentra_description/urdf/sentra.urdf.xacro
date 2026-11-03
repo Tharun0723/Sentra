@@ -30,7 +30,12 @@
   <!-- ========== BASE / BODY ========== -->
   <!-- Several visuals share one link so TF stays small. Collision is a single box. -->
   <link name="base_link">
-    <xacro:box_inertia mass="18.0" x="${chassis_x}" y="${chassis_y}" z="${chassis_z}"/>
+    <xacro:box_inertia
+        mass="18.0"
+        x="${chassis_x}"
+        y="${chassis_y}"
+        z="${chassis_z}"
+        origin_xyz="0 0 ${chassis_lift}"/>
     <visual>
       <origin xyz="0 0 ${chassis_lift}" rpy="0 0 0"/>
       <geometry>
@@ -70,7 +75,7 @@
   <!-- ========== DRIVE WHEELS (movable) ========== -->
   <xacro:macro name="drive_wheel" params="prefix y">
     <link name="${prefix}_wheel_link">
-      <xacro:cylinder_inertia mass="1.2" radius="${wheel_radius}" length="${wheel_width}"/>
+      <xacro:wheel_inertia mass="1.2" radius="${wheel_radius}" length="${wheel_width}"/>
       <visual>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
         <geometry>
@@ -135,7 +140,12 @@
 
   <!-- ========== SENSOR MAST ========== -->
   <link name="mast_link">
-    <xacro:box_inertia mass="1.5" x="0.06" y="0.06" z="0.34"/>
+    <xacro:box_inertia
+        mass="1.5"
+        x="0.06"
+        y="0.06"
+        z="0.34"
+        origin_xyz="0 0 0.17"/>
     <visual>
       <origin xyz="0 0 0.17" rpy="0 0 0"/>
       <geometry>
