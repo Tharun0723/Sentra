@@ -27,6 +27,27 @@
 
   </ros2_control>
 
+  <!-- Reduce ground friction on fixed spherical caster wheels -->
+  <gazebo reference="front_left_caster_link">
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+  </gazebo>
+
+  <gazebo reference="front_right_caster_link">
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+  </gazebo>
+
+  <gazebo reference="rear_left_caster_link">
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+  </gazebo>
+
+  <gazebo reference="rear_right_caster_link">
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+  </gazebo>
+
   <!-- Gazebo Harmonic ROS 2 Control plugin -->
   <gazebo>
     <plugin
