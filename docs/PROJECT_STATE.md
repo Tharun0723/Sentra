@@ -65,3 +65,37 @@
 - Do not consider obstacle detection validated until tested with objects.
 - ROS 2 bridge is currently launched manually in a separate terminal.
 - RViz should be launched with NVIDIA D3D12 environment variables.
+
+## 6 November 2026 — Custom Factory Environment
+
+### Completed
+- Created a separate factory world: factory_world.sdf.
+- Preserved empty.sdf as the original working simulation world.
+- Created a 40 x 30 metre factory floor.
+- Added four perimeter walls with a 10 metre entrance.
+- Added 12 static structural support pillars.
+- Added 12 point lights for industrial illumination.
+- Adjusted floor, wall and pillar materials.
+- Tuned directional and point lighting.
+- Validated the factory world using gz sdf -k.
+- Successfully launched and visually inspected the factory in Gazebo Harmonic.
+
+### Current Factory Design
+- Floor: medium-dark grey concrete.
+- Walls: light grey.
+- Pillars: charcoal grey.
+- Lighting: neutral industrial lighting.
+- Roof: not yet implemented.
+
+### Next Milestones
+1. Build the industrial roof structure and steel beams.
+2. Add production machinery and conveyor systems.
+3. Create warehouse racks and storage areas.
+4. Add safety markings and inspection obstacles.
+5. Integrate SENTRA into the custom factory world.
+6. Verify LiDAR and navigation in the factory.
+
+### Environment
+- ROS 2 Jazzy
+- Gazebo Harmonic 8.15.0
+- Workspace: ~/sentra_ws
