@@ -1,0 +1,59 @@
+
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="roof_panels">
+    <static>true</static>
+
+    <link name="roof_panel_link">
+
+      <!-- Left Sloping Roof Panel -->
+      <collision name="left_panel_collision">
+        <pose>0 -7.531 7.333 0.1326 0 0</pose>
+        <geometry>
+          <box>
+            <size>40 15.13 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="left_panel_visual">
+        <pose>0 -7.531 7.333 0.1326 0 0</pose>
+        <geometry>
+          <box>
+            <size>40 15.13 0.08</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.32 0.35 0.38 1</ambient>
+          <diffuse>0.42 0.46 0.50 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+      </visual>
+
+      <!-- Right Sloping Roof Panel -->
+      <collision name="right_panel_collision">
+        <pose>0 7.531 7.333 -0.1326 0 0</pose>
+        <geometry>
+          <box>
+            <size>40 15.13 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="right_panel_visual">
+        <pose>0 7.531 7.333 -0.1326 0 0</pose>
+        <geometry>
+          <box>
+            <size>40 15.13 0.08</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.32 0.35 0.38 1</ambient>
+          <diffuse>0.42 0.46 0.50 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

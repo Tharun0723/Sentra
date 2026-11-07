@@ -1,0 +1,88 @@
+
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="roof_purlins">
+    <static>true</static>
+
+    <link name="purlin_link">
+
+      <!-- Left outer purlin -->
+      <visual name="left_outer_visual">
+        <pose>0 -15 6.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="left_outer_collision">
+        <pose>0 -15 6.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Left intermediate purlin 1 -->
+      <visual name="left_mid1_visual">
+        <pose>0 -10 6.89 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="left_mid1_collision">
+        <pose>0 -10 6.89 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Left intermediate purlin 2 -->
+      <visual name="left_mid2_visual">
+        <pose>0 -5 7.56 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="left_mid2_collision">
+        <pose>0 -5 7.56 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Ridge purlin -->
+      <visual name="ridge_visual">
+        <pose>0 0 8.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="ridge_collision">
+        <pose>0 0 8.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Right intermediate purlin 1 -->
+      <visual name="right_mid1_visual">
+        <pose>0 5 7.56 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="right_mid1_collision">
+        <pose>0 5 7.56 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Right intermediate purlin 2 -->
+      <visual name="right_mid2_visual">
+        <pose>0 10 6.89 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="right_mid2_collision">
+        <pose>0 10 6.89 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+      <!-- Right outer purlin -->
+      <visual name="right_outer_visual">
+        <pose>0 15 6.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+        <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+      </visual>
+      <collision name="right_outer_collision">
+        <pose>0 15 6.22 0 0 0</pose>
+        <geometry><box><size>40 0.15 0.15</size></box></geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

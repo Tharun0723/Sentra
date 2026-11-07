@@ -1,0 +1,57 @@
+
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="factory_cladding">
+    <static>true</static>
+
+    <link name="gable_link">
+
+      <!-- West gable end -->
+      <collision name="west_gable_collision">
+        <pose>-19.85 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://factory_cladding/meshes/gable_end.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="west_gable_visual">
+        <pose>-19.85 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://factory_cladding/meshes/gable_end.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.55 0.57 0.59 1</ambient>
+          <diffuse>0.78 0.80 0.82 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- East gable end -->
+      <collision name="east_gable_collision">
+        <pose>19.85 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://factory_cladding/meshes/gable_end.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="east_gable_visual">
+        <pose>19.85 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://factory_cladding/meshes/gable_end.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.55 0.57 0.59 1</ambient>
+          <diffuse>0.78 0.80 0.82 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

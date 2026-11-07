@@ -27,7 +27,7 @@
       filename="gz-sim-sensors-system"
       name="gz::sim::systems::Sensors">
       <render_engine>ogre2</render_engine>
-    </plugin>  
+    </plugin>
 
     <!-- Lighting -->
     <light type="directional" name="sun">
@@ -198,6 +198,65 @@
             <specular>0.15 0.15 0.15 1</specular>
           </material>
         </visual>
+
+
+        <!-- North Wall Roof Extension -->
+        <collision name="north_extension_collision">
+          <pose>0 15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>40 0.3 0.32</size></box>
+          </geometry>
+        </collision>
+
+        <visual name="north_extension_visual">
+          <pose>0 15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>40 0.3 0.32</size></box>
+          </geometry>
+          <material>
+            <ambient>0.55 0.57 0.59 1</ambient>
+            <diffuse>0.78 0.80 0.82 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- South Left Roof Extension -->
+        <collision name="south_left_extension_collision">
+          <pose>-12.5 -15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>15 0.3 0.32</size></box>
+          </geometry>
+        </collision>
+
+        <visual name="south_left_extension_visual">
+          <pose>-12.5 -15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>15 0.3 0.32</size></box>
+          </geometry>
+          <material>
+            <ambient>0.55 0.57 0.59 1</ambient>
+            <diffuse>0.78 0.80 0.82 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- South Right Roof Extension -->
+        <collision name="south_right_extension_collision">
+          <pose>12.5 -15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>15 0.3 0.32</size></box>
+          </geometry>
+        </collision>
+
+        <visual name="south_right_extension_visual">
+          <pose>12.5 -15 6.14 0 0 0</pose>
+          <geometry>
+            <box><size>15 0.3 0.32</size></box>
+          </geometry>
+          <material>
+            <ambient>0.55 0.57 0.59 1</ambient>
+            <diffuse>0.78 0.80 0.82 1</diffuse>
+          </material>
+        </visual>
+
 
       </link>
     </model>
@@ -398,13 +457,83 @@
       </link>
     </model>
 
+    <!-- Reusable Industrial Roof Truss -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_1</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 2 -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_2</name>
+      <pose>-16 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 3 -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_3</name>
+      <pose>-8 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 4 -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_4</name>
+      <pose>8 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 5 -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_5</name>
+      <pose>16 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 6 - West End Support -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_6</name>
+      <pose>-19.5 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Roof Truss 7 - East End Support -->
+    <include>
+      <uri>model://roof_truss</uri>
+      <name>roof_truss_7</name>
+      <pose>19.5 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Reusable Roof Purlins -->
+    <include>
+      <uri>model://roof_purlins</uri>
+      <name>roof_purlins</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Industrial Factory Roof Panels -->
+    <include>
+      <uri>model://roof_panels</uri>
+      <name>roof_panels</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Factory Gable End Cladding -->
+    <include>
+      <uri>model://factory_cladding</uri>
+      <name>factory_cladding</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
     <!-- Industrial Ceiling Lighting -->
 
     <light type="point" name="factory_light_1">
       <pose>-15 -10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -417,7 +546,7 @@
     <light type="point" name="factory_light_2">
       <pose>-5 -10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -429,7 +558,7 @@
     <light type="point" name="factory_light_3">
       <pose>5 -10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -441,7 +570,7 @@
     <light type="point" name="factory_light_4">
       <pose>15 -10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -453,7 +582,7 @@
     <light type="point" name="factory_light_5">
       <pose>-15 0 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -465,7 +594,7 @@
     <light type="point" name="factory_light_6">
       <pose>-5 0 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -477,7 +606,7 @@
     <light type="point" name="factory_light_7">
       <pose>5 0 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -489,7 +618,7 @@
     <light type="point" name="factory_light_8">
       <pose>15 0 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -501,7 +630,7 @@
     <light type="point" name="factory_light_9">
       <pose>-15 10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -513,7 +642,7 @@
     <light type="point" name="factory_light_10">
       <pose>-5 10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -525,7 +654,7 @@
     <light type="point" name="factory_light_11">
       <pose>5 10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>
@@ -537,7 +666,7 @@
     <light type="point" name="factory_light_12">
       <pose>15 10 5.5 0 0 0</pose>
       <diffuse>1 0.95 0.85 1</diffuse>
-      <intensity>5</intensity>
+      <intensity>1.0</intensity>
       <attenuation>
         <range>15</range>
         <linear>0.05</linear>

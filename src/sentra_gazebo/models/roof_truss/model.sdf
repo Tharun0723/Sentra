@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+    <model name="roof_truss">
+      <static>true</static>
+
+      <link name="truss_link">
+
+        <!-- Left Sloping Rafter -->
+        <collision name="left_rafter_collision">
+          <pose>0 -7.5 7.1 0.1326 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 15.13 0.25</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="left_rafter_visual">
+          <pose>0 -7.5 7.1 0.1326 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 15.13 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.16 0.19 0.22 1</ambient>
+            <diffuse>0.28 0.32 0.36 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Right Sloping Rafter -->
+        <collision name="right_rafter_collision">
+          <pose>0 7.5 7.1 -0.1326 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 15.13 0.25</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="right_rafter_visual">
+          <pose>0 7.5 7.1 -0.1326 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 15.13 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.16 0.19 0.22 1</ambient>
+            <diffuse>0.28 0.32 0.36 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Horizontal Tie Beam -->
+        <collision name="tie_beam_collision">
+          <pose>0 0 6.15 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 30 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="tie_beam_visual">
+          <pose>0 0 6.15 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 30 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.16 0.19 0.22 1</ambient>
+            <diffuse>0.28 0.32 0.36 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Vertical Web Members -->
+
+        <collision name="vertical_left_outer_collision">
+          <pose>0 -10 6.4585 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 0.617</size></box></geometry>
+        </collision>
+        <visual name="vertical_left_outer_visual">
+          <pose>0 -10 6.4585 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 0.617</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="vertical_left_inner_collision">
+          <pose>0 -5 6.7915 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.283</size></box></geometry>
+        </collision>
+        <visual name="vertical_left_inner_visual">
+          <pose>0 -5 6.7915 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.283</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="vertical_centre_collision">
+          <pose>0 0 7.125 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.95</size></box></geometry>
+        </collision>
+        <visual name="vertical_centre_visual">
+          <pose>0 0 7.125 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.95</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="vertical_right_inner_collision">
+          <pose>0 5 6.7915 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.283</size></box></geometry>
+        </collision>
+        <visual name="vertical_right_inner_visual">
+          <pose>0 5 6.7915 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 1.283</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="vertical_right_outer_collision">
+          <pose>0 10 6.4585 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 0.617</size></box></geometry>
+        </collision>
+        <visual name="vertical_right_outer_visual">
+          <pose>0 10 6.4585 0 0 0</pose>
+          <geometry><box><size>0.15 0.15 0.617</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <!-- Diagonal Web Members -->
+
+        <collision name="diagonal_left_outer_collision">
+          <pose>0 -7.5 6.4585 -0.1228 0 0</pose>
+          <geometry><box><size>0.15 5.038 0.15</size></box></geometry>
+        </collision>
+        <visual name="diagonal_left_outer_visual">
+          <pose>0 -7.5 6.4585 -0.1228 0 0</pose>
+          <geometry><box><size>0.15 5.038 0.15</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="diagonal_left_inner_collision">
+          <pose>0 -2.5 6.7915 -0.251 0 0</pose>
+          <geometry><box><size>0.15 5.162 0.15</size></box></geometry>
+        </collision>
+        <visual name="diagonal_left_inner_visual">
+          <pose>0 -2.5 6.7915 -0.251 0 0</pose>
+          <geometry><box><size>0.15 5.162 0.15</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="diagonal_right_inner_collision">
+          <pose>0 2.5 6.7915 0.251 0 0</pose>
+          <geometry><box><size>0.15 5.162 0.15</size></box></geometry>
+        </collision>
+        <visual name="diagonal_right_inner_visual">
+          <pose>0 2.5 6.7915 0.251 0 0</pose>
+          <geometry><box><size>0.15 5.162 0.15</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+        <collision name="diagonal_right_outer_collision">
+          <pose>0 7.5 6.4585 0.1228 0 0</pose>
+          <geometry><box><size>0.15 5.038 0.15</size></box></geometry>
+        </collision>
+        <visual name="diagonal_right_outer_visual">
+          <pose>0 7.5 6.4585 0.1228 0 0</pose>
+          <geometry><box><size>0.15 5.038 0.15</size></box></geometry>
+          <material><ambient>0.16 0.19 0.22 1</ambient><diffuse>0.28 0.32 0.36 1</diffuse></material>
+        </visual>
+
+      </link>
+    </model>
+</sdf>

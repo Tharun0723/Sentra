@@ -1,0 +1,58 @@
+solid gable_end
+ facet normal 1.0 0.0 0.0
+  outer loop
+   vertex -0.06 -15.0 6.0
+   vertex -0.06 15.0 6.0
+   vertex -0.06 0.0 8.1
+  endloop
+ endfacet
+ facet normal -1.0 0.0 0.0
+  outer loop
+   vertex 0.06 -15.0 6.0
+   vertex 0.06 0.0 8.1
+   vertex 0.06 15.0 6.0
+  endloop
+ endfacet
+ facet normal 0.0 0.1386478445344062 -0.9903417466743302
+  outer loop
+   vertex -0.06 -15.0 6.0
+   vertex -0.06 0.0 8.1
+   vertex 0.06 0.0 8.1
+  endloop
+ endfacet
+ facet normal 0.0 0.1386478445344062 -0.9903417466743302
+  outer loop
+   vertex -0.06 -15.0 6.0
+   vertex 0.06 0.0 8.1
+   vertex 0.06 -15.0 6.0
+  endloop
+ endfacet
+ facet normal 0.0 -0.1386478445344062 -0.9903417466743302
+  outer loop
+   vertex -0.06 0.0 8.1
+   vertex -0.06 15.0 6.0
+   vertex 0.06 15.0 6.0
+  endloop
+ endfacet
+ facet normal 0.0 -0.1386478445344062 -0.9903417466743302
+  outer loop
+   vertex -0.06 0.0 8.1
+   vertex 0.06 15.0 6.0
+   vertex 0.06 0.0 8.1
+  endloop
+ endfacet
+ facet normal 0.0 0.0 1.0
+  outer loop
+   vertex -0.06 15.0 6.0
+   vertex -0.06 -15.0 6.0
+   vertex 0.06 -15.0 6.0
+  endloop
+ endfacet
+ facet normal -0.0 0.0 1.0
+  outer loop
+   vertex -0.06 15.0 6.0
+   vertex 0.06 -15.0 6.0
+   vertex 0.06 15.0 6.0
+  endloop
+ endfacet
+endsolid gable_end
