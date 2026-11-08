@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="production_line">
+    <static>true</static>
+
+    <link name="conveyor_link">
+
+      <!-- Original conveyor visual -->
+      <visual name="conveyor_visual">
+        <pose>0 0 0 1.5707963 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/sentra_conveyor_gazebo.glb</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Belt and upper conveyor deck -->
+      <collision name="belt_collision">
+        <pose>0 0.095 0.96 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.0 0.88 0.10</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Left and right frame rails -->
+      <collision name="left_rail_collision">
+        <pose>0 -0.39 0.83 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.1 0.07 0.20</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="right_rail_collision">
+        <pose>0 0.58 0.83 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.1 0.07 0.20</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Eight simplified support legs -->
+      <collision name="support_1">
+        <pose>-2.4 -0.36 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_2">
+        <pose>-2.4 0.55 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_3">
+        <pose>-0.8 -0.36 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_4">
+        <pose>-0.8 0.55 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_5">
+        <pose>0.8 -0.36 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_6">
+        <pose>0.8 0.55 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_7">
+        <pose>2.4 -0.36 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+      <collision name="support_8">
+        <pose>2.4 0.55 0.39 0 0 0</pose>
+        <geometry><box><size>0.09 0.09 0.78</size></box></geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

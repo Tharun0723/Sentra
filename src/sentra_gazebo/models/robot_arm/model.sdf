@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="robot_arm">
+    <static>true</static>
+
+    <link name="robot_arm_link">
+
+      <!-- Industrial robot arm visual -->
+      <visual name="robot_arm_visual">
+        <pose>0 0 0 1.5707963 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/sentra_robot_arm_gazebo.glb</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- First-pass simplified collision approximation -->
+      <collision name="robot_arm_collision">
+        <pose>0 0 0.95 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.65 0.70 1.90</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

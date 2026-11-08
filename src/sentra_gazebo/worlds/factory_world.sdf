@@ -457,68 +457,8 @@
       </link>
     </model>
 
-    <!-- Reusable Industrial Roof Truss -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_1</name>
-      <pose>0 0 0 0 0 0</pose>
-    </include>
 
-    <!-- Roof Truss 2 -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_2</name>
-      <pose>-16 0 0 0 0 0</pose>
-    </include>
 
-    <!-- Roof Truss 3 -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_3</name>
-      <pose>-8 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Roof Truss 4 -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_4</name>
-      <pose>8 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Roof Truss 5 -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_5</name>
-      <pose>16 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Roof Truss 6 - West End Support -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_6</name>
-      <pose>-19.5 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Roof Truss 7 - East End Support -->
-    <include>
-      <uri>model://roof_truss</uri>
-      <name>roof_truss_7</name>
-      <pose>19.5 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Reusable Roof Purlins -->
-    <include>
-      <uri>model://roof_purlins</uri>
-      <name>roof_purlins</name>
-      <pose>0 0 0 0 0 0</pose>
-    </include>
-
-    <!-- Industrial Factory Roof Panels -->
-    <include>
-      <uri>model://roof_panels</uri>
-      <name>roof_panels</name>
-      <pose>0 0 0 0 0 0</pose>
-    </include>
 
     <!-- Factory Gable End Cladding -->
     <include>
@@ -674,6 +614,33 @@
         <quadratic>0.01</quadratic>
       </attenuation>
     </light>
+
+    <!-- ================================= -->
+    <!-- ZONE A - PRODUCTION LINE          -->
+    <!-- ================================= -->
+
+    <include>
+      <uri>model://production_line</uri>
+      <name>sentra_production_conveyor_01</name>
+      <pose>-10 5 0 0 0 0</pose>
+    </include>
+
+    <!-- ================================= -->
+    <!-- ZONE A - CNC MACHINING CENTRE     -->
+    <!-- ================================= -->
+
+    <include>
+      <uri>model://cnc_machine</uri>
+      <name>sentra_cnc_machine_01</name>
+      <pose>-10 9 0 0 0 0</pose>
+    </include>
+
+    <!-- Zone A - Industrial Robot Arm -->
+    <include>
+      <uri>model://robot_arm</uri>
+      <name>sentra_robot_arm_01</name>
+      <pose>-7.5 7.0 0 0 0 0</pose>
+    </include>
 
   </world>
 </sdf>
