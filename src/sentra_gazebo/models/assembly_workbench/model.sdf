@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="assembly_workbench">
+    <static>true</static>
+
+    <link name="workbench_link">
+
+      <visual name="workbench_visual">
+        <pose>0 0 0 1.5707963 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://assembly_workbench/meshes/sentra_assembly_workbench_gazebo.glb</uri>
+          </mesh>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+      </visual>
+
+      <collision name="workbench_collision">
+        <pose>0 0 0.463 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.62 0.912 0.926</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

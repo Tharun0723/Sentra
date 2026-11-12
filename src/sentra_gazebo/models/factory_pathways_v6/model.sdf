@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="factory_pathways_v6">
+    <static>true</static>
+
+    <link name="pathways_link">
+      <visual name="pathways_visual">
+        <geometry>
+          <mesh>
+            <uri>model://factory_pathways_v6/meshes/pathways_v6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.13 0.14 0.15 1</ambient>
+          <diffuse>0.19 0.20 0.21 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="pathways_collision">
+        <geometry>
+          <mesh>
+            <uri>model://factory_pathways_v6/meshes/pathways_v6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

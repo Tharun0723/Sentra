@@ -615,6 +615,27 @@
       </attenuation>
     </light>
 
+    <!-- SENTRA V6 Factory Pathways -->
+    <include>
+      <uri>model://factory_pathways_v6</uri>
+      <name>sentra_factory_pathways_v6</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- SENTRA V6 Yellow Pathway Markings -->
+    <include>
+      <uri>model://factory_pathway_markings</uri>
+      <name>sentra_factory_pathway_markings</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- SENTRA Central Roundabout -->
+    <include>
+      <uri>model://factory_roundabout</uri>
+      <name>sentra_central_roundabout</name>
+      <pose>0 5 0 0 0 0</pose>
+    </include>
+
     <!-- ================================= -->
     <!-- ZONE A - PRODUCTION LINE          -->
     <!-- ================================= -->
@@ -640,6 +661,13 @@
       <uri>model://robot_arm</uri>
       <name>sentra_robot_arm_01</name>
       <pose>-7.5 7.0 0 0 0 0</pose>
+    </include>
+
+    <!-- Assembly Workbench -->
+    <include>
+      <uri>model://assembly_workbench</uri>
+      <name>sentra_assembly_workbench_01</name>
+      <pose>-4.5 7 0 0 0 0</pose>
     </include>
 
   </world>
